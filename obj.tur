@@ -1,1 +1,3 @@
-0,0 > 0,1 > 1,1 > 1,0 > 0,0
+# Draw half a square and then a triangle under it
+0,0 > 0,1 > 1,1 > 1,0
+0,0 > -1,0 > 0,-1 > 0,0

@@ -5,6 +5,8 @@ def ReadVertex(fileN):
     instr = []
     for line in f:
       line = line.replace(' ','').replace('\n','').split('>')
+      if line[0].startswith('#'):
+        continue
       point = []
       for i in range(len(line)):
         point.append(
@@ -24,8 +26,7 @@ def PaintVertex(vertexes,scale=1,pos=(0,0)):
     print('instruction ', instruction)
 
     T.penup()
-    T.setx(instruction[0][0] * scale + pos[0])
-    T.sety(instruction[0][1] * scale + pos[1])
+    T.goto(instruction[0][0] * scale + pos[0],instruction[0][1] * scale + pos[1])
     T.pendown()
 
     for coord in instruction:
