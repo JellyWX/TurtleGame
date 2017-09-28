@@ -5,22 +5,27 @@ def ReadVertex(fileN):
     instr = []
     for line in f:
       line = line.replace(' ','').replace('\n','').split('>')
+
       if line[0].startswith('#'):
         continue
+
       point = []
       for i in range(len(line)):
         point.append(
-          tuple(map(float,line[i].split(',')))
+          tuple(
+            map(float,line[i].split(','))
+          )
         )
 
       instr.append(point)
 
   return instr
 
-def PaintVertex(vertexes,scale=1,pos=(0,0)):
+def PaintVertex(vertexes,scale=1,pos=(0,0),thickness=2):
   T = turtle.Turtle()
   T.ht()
   T.speed(0)
+  T.pensize(thickness)
 
   for instruction in vertexes:
     print('instruction ', instruction)
