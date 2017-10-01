@@ -1,9 +1,9 @@
-from TurtleTools import *
+import turtle
+from Element import Element
 
-square = ReadVertex('obj.tur')
+e = Element(scale=100)
+e.from_file('obj.tur')
 
-PaintVertex(square,scale=50)
-#PaintVertex(square,scale=100)
-#PaintVertex(square,scale=50,pos=(10,20))
+e.draw()
 
 turtle.exitonclick()
